@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Busqueda de videojuego</title>
+</head>
+<body>
+<nav th:replace="Components/navbar :: nav_bar"></nav>
+<div class="conteiner">
+    <div class="row">
+        <div class="col-12">
+            <div class="card-deck mt-5" th:if="${videojuegos.size}">
+                <h2>Resultados: </h2>
+                <div th:replace="Components/card :: _card"></div>
+            </div>
+            <div th:unless="${videojuegos.size}">
+                <h2>No hay resultados</h2>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
